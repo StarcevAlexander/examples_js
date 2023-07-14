@@ -1,0 +1,40 @@
+* {
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+#popup-btn{
+  color: green;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 15px;
+  background-color: white;
+  border: 2px solid black;
+  width: 95%;
+  height: 95%;
+}
+
+.popup-content{
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.popup-content .close {
+  margin: 15px;
+}
+.popup-content .ok {
+  display: block;
+  margin: 15px;
+}
+
+.popup p{
+  overflow: auto;
+}
+

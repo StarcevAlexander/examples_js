@@ -1,0 +1,2 @@
+$(document).ready(function(){$(".contacts-grid-right .toggle").click(function(){let expanded=false;if($(this).hasClass('expanded')){expanded=true;}
+$('.contacts-grid-right .toggle').removeClass('expanded');if(!expanded){$(this).addClass('expanded');}});});

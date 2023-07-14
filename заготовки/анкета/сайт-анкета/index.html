@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Внештатный Резерв</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form
+        id="tg"
+        target="_blank"
+        action="https://formsubmit.co/Vreserv38@yandex.ru"
+        method="POST"
+      >
+        <label class="mt-5 mb-1">Фамилия*:</label><br />
+        <input
+          type="text"
+          id="surname"
+          name="surname фамилия"
+          class="form-control"
+          required
+        /><br />
+        <label class="mt-2 mb-1">Имя*:</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name имя"
+          class="form-control"
+          required
+        /><br />
+        <label class="mt-2 mb-1">Отчество*:</label><br />
+        <input
+          id="patronymic"
+          type="text"
+          name="patronymic отчество"
+          class="form-control"
+          required
+        /><br />
+
+        <label class="mt-2 mb-1">Гражданство*:</label><br />
+        <select
+          id="citizenship"
+          name="citizenship гражданство"
+          required
+          onchange="showInput(this.value)"
+        >
+          <option value="РФ">РФ</option>
+          <option value="Другое">Другое</option>
+          <br /><br /></select
+        ><br />
+        <div id="inputField" style="display: none">
+          <label class="mt-3 mb-1" for="otherCitizenship">Указать:</label><br />
+          <input
+            id="otherCitizenship"
+            class="form-control"
+            type="text"
+            name="otherCitizenship иное"
+          />
+        </div>
+
+        <label class="mt-3 mb-1">Дата рождения*:</label><br />
+        <input
+          id="birth_date"
+          type="date"
+          name="birth_date Дата_рождения"
+          required
+        /><br />
+
+        <label class="mt-3 mb-1">Паспортные данные*:</label><br />
+        <label>Кем выдан*:</label><br />
+        <input
+          id="issued_by"
+          type="text"
+          name="issued_by Кем_выдан"
+          class="form-control"
+          required
+        /><br />
+        <label>Код подразделения*:</label><br />
+        <input
+          id="division_code"
+          class="form-control"
+          type="text"
+          name="division_code код_подразделения"
+          required
+        /><br />
+        <label class="mt-3 mb-1">Дата выдачи паспорта*:</label><br />
+        <input
+          id="passport_issue_date"
+          type="date"
+          name="passport_issue_date дата_выдачи_паспорта"
+          required
+        /><br />
+        <label class="mt-3 mb-1">Серия:</label><br />
+        <input
+          id="passport_series"
+          class="form-control"
+          type="text"
+          name="passport_series серия"
+          required
+        /><br />
+        <label class="mt-2 mb-1">Номер:</label><br />
+        <input
+          id="passport_number"
+          class="form-control"
+          type="text"
+          name="passport_number номер"
+          required
+        /><br />
+        <label class="mt-3 mb-1">Адрес по регистрации*:</label><br />
+        <input
+          id="registration_address"
+          class="form-control"
+          type="text"
+          name="registration_address адрес_по_регистрации"
+          required
+        /><br />
+        <label class="mt-3 mb-1">Адрес фактического проживания*:</label><br />
+        <input
+          id="residential_address"
+          class="form-control"
+          type="text"
+          name="residential_address адрес_фактического_проживания"
+          required
+        /><br />
+        <label class="mt-3 mb-1"
+          >Ближайшая остановка общественного транспорта:</label
+        ><br />
+        <input
+          id="nearest_transport_stop"
+          class="form-control"
+          type="text"
+          name="nearest_transport_stop остановка_общественного_транспорта"
+        /><br />
+        <label class="mt-3 mb-1">Мобильный телефон*:</label><br />
+        <input
+          id="mobile_phone"
+          class="form-control"
+          type="tel"
+          name="mobile_phone мобильный_телефон"
+          required
+        /><br />
+
+        <label class="mt-2 mb-1">Есть ли банковская карта?*:</label><br />
+        <select
+          id="has_card"
+          name="has_card карта_есть"
+          onchange="checkCard(this.value)"
+        >
+          <option value="Да">Да</option>
+          <option value="Нет">Нет</option>
+          <br /><br /></select
+        ><br />
+
+        <div id="inputCard">
+          <label class="mt-3 mb-1" for="cardName">Получатель:</label><br />
+          <input
+            id="cardName"
+            class="form-control"
+            type="text"
+            name="cardName имя_владельца_карты"
+            placeholder="Иванов Иван Иванович"
+          />
+
+          <label class="mt-3 mb-1" for="cardNumber">Номер карты:</label><br />
+          <input
+            id="cardNumber"
+            class="form-control"
+            type="text"
+            inputmode="numeric"
+            name="cardNumber номер_карты"
+            placeholder="12341234123412341234"
+          />
+        
+          <label class="mt-3 mb-1" for="personBank">Банк получателя:</label><br />
+          <input
+            id="personBank"
+            class="form-control"
+            type="text"
+            name="personBank банк_получателя"
+            placeholder="БАЙКАЛЬСКИЙ БАНК ПАО СБЕРБАНК"
+          />
+
+          <label class="mt-3 mb-1" for="bik">БИК:</label><br />
+          <input
+            id="bik"
+            class="form-control"
+            type="text"
+            name="bik БИК"
+            placeholder="123456789"
+          />
+        
+          <label class="mt-3 mb-1" for="korrNumber">Корр. счёт:</label><br />
+          <input
+            id="korrNumber"
+            class="form-control"
+            type="text"
+            name="korrNumber корр_счёт"
+            placeholder="12341234123412341234"
+          />
+
+          <label class="mt-3 mb-1" for="innNumber">ИНН:</label><br />
+          <input
+            id="innNumber"
+            class="form-control"
+            type="text"
+            name="innNumber ИНН"
+            placeholder="1234123412"
+          />
+
+          <label class="mt-3 mb-1" for="kppNumber">КПП:</label><br />
+          <input
+            id="kppNumber"
+            class="form-control"
+            type="text"
+            name="kppNumber КПП"
+            placeholder="123412341"
+          />
+
+          <label class="mt-3 mb-1" for="okpoNumber">ОКПО:</label><br />
+          <input
+            id="okpoNumber"
+            class="form-control"
+            type="text"
+            name="okpoNumber ОКПО"
+            placeholder="12341234"
+          />
+
+          <label class="mt-3 mb-1" for="ogrnNumber">ОГРН:</label><br />
+          <input
+            id="ogrnNumber"
+            class="form-control"
+            type="text"
+            name="ogrnNumber ОГРН"
+            placeholder="1234123412345"
+          />
+
+          <label class="mt-3 mb-1" for="swift_Number">SWIFT-код:</label><br />
+          <input
+            id="swift_Number"
+            class="form-control"
+            type="text"
+            name="swift_Number SWIFT-код"
+            placeholder="SABRRU66"
+          />
+
+          <label class="mt-3 mb-1" for="bankAdress">Почтовый адрес банка:</label><br />
+          <input
+            id="bankAdress"
+            class="form-control"
+            type="text"
+            name="bankAdress Почтовый_адрес_банка"
+            placeholder="664011, ИРКУТСК, УЛ. ПИСКУНОВА, 122"
+          />
+        </div>
+        <input
+          class="mt-3"
+          type="checkbox"
+          name="accept_private"
+          required
+          checked
+          id="accept_private"
+        />
+        <label id="accept_private" class="mt-3 mb-1"
+          >Я согласен с условиями предоставления
+          <span id="popup-btn">персональных данных</span> </label
+        ><br />
+        <button type="submit" class="btn btn-primary mt-3 mb-3">
+          Отправить
+        </button>
+      </form>
+      <div id="popup" class="popup container">
+        <div class="popup-content">
+          <span class="close btn btn-primary">&times;</span>
+          <p>
+            Я, субъект персональных данных (Ф.И.О. полностью, указываются при
+            заполнении анкеты), основной документ, удостоверяющий личность:
+            (наименование, серия, номер, дата выдачи, выдавший орган),
+            зарегистрированный(-ая) по адресу: (указываются при заполнении), в
+            лице представителя субъекта персональных данных (заполняется в
+            случае получения согласия от представителя субъекта персональных
+            данных)(Ф.И.О. полностью), основной документ, удостоверяющий
+            личность: (наименование, серия, номер, дата выдачи, выдавший орган),
+            зарегистрированный(-ая) по адресу:(укзывается при заполнении),
+            (реквизиты доверенности или иного документа, подтверждающего
+            полномочия представителя), в соответствии со ст. 9 Федерального
+            закона от 27.07.2006 N 152-ФЗ "О персональных данных" даю
+            конкретное, предметное, информированное, сознательное и однозначное
+            согласие на обработку своих персональных данных ИП Новосельцев С.
+            А., ИНН: 030905147263, ОГРН: 320385000004085 (далее - оператор),
+            находящемуся по адресу: Иркутская область, Иркутский р-н, д.
+            Грановщина, ул. Лазурная, д. 24, почтовый индекс: 664514, с целью:
+            взаимодействия по договору оказания услуг (цель обработки
+            персональных данных). Перечень моих персональных данных, на
+            обработку которых я даю согласие: фамилия, имя, отчество,
+            гражданство, пол, возраст, дата и место рождения, номер основного
+            документа, удостоверяющего личность, сведения о дате выдачи
+            указанного документа и выдавшем его органе, адрес регистрации по
+            месту жительства, адрес фактического проживания, идентификационный
+            номер налогоплательщика, страховой номер индивидуального лицевого
+            счета, номер телефона, адрес электронной почты, иные данные.
+            Разрешаю оператору производить автоматизированную, а также
+            осуществляемую без использования средств автоматизации обработку
+            моих персональных данных, а именно: сбор, запись, систематизацию,
+            накопление, хранение, уточнение (обновление, изменение), извлечение,
+            использование, передачу (предоставление, доступ), обезличивание,
+            блокирование, удаление, уничтожение. Лицо, осуществляющее обработку
+            персональных данных по поручению оператора (если обработка будет
+            поручена такому лицу): (наименование или Ф.И.О., ИНН и (или) ОГРН
+            (ОГРНИП)), находящееся по адресу: (адрес). Субъект персональных
+            данных вправе отозвать настоящее согласие на обработку своих
+            персональных данных, письменно уведомив об этом оператора. Я даю
+            свое согласие на получение от компании «Внештатный резерв» sms –
+            уведомлений на номер указаный в анкете. Порядок отзыва данного
+            согласия мне известен. Порядок отзыва вашего согласия на получение
+            от компании «Внештатный резерв» sms-уведомлений следующий:
+            необходимо позвонить на нашу горячую линию по номеру 8(924)
+            833-83-11, назвать свои ФИО, номер телефона, на который пришла sms и
+            попросить убрать этот номер из нашей рассылки.
+          </p>
+          <button id="popup-close-btn" class="btn btn-primary ok">Ок</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

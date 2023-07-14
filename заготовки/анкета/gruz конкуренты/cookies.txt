@@ -1,0 +1,18 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	_csrf	4575afb236827d6509ea2a6d8d9a77bdb2117f3bf7658addf614212ccf177bbda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Nx2xZNMaibyfrdO7eJDaFbTJLNnASI39%22%3B%7D
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	PHPSESSID	6h9916vr6573fs92gn1cbgeunf
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	_perevozka_detskoy_mebeli_	8b437f662084739bc8896b4817ce218e5ed8345a04b0f5669bf36920b8e624eea%3A2%3A%7Bi%3A0%3Bs%3A26%3A%22_perevozka_detskoy_mebeli_%22%3Bi%3A1%3Bs%3A26%3A%22_perevozka_detskoy_mebeli_%22%3B%7D
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	_vygruzka_bumagi_na_sklad__	258785c687b194591647b6e16bd7a8e8803da825abc29b8549ede7df22c2f0a9a%3A2%3A%7Bi%3A0%3Bs%3A27%3A%22_vygruzka_bumagi_na_sklad__%22%3Bi%3A1%3Bs%3A27%3A%22_vygruzka_bumagi_na_sklad__%22%3B%7D
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	vygruzka_produktov_iz_mashiny_	ec5f113e78826f748cc093a7ae9fba82353029ea26ed9f9dce2fa4d643f215c3a%3A2%3A%7Bi%3A0%3Bs%3A30%3A%22vygruzka_produktov_iz_mashiny_%22%3Bi%3A1%3Bs%3A30%3A%22vygruzka_produktov_iz_mashiny_%22%3B%7D
+.ok.ru	TRUE	/	FALSE	1999999999	bci	-1086563279889966522
+.ok.ru	TRUE	/	FALSE	1999999999	_statid	937e0196-84bc-4624-aec8-349c872f3f16
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	operativnye_dannye_8_aprelya_2020_goda	ea0351daff504795c846952f50e704e672919942c6fda46323b713d491a91da5a%3A2%3A%7Bi%3A0%3Bs%3A38%3A%22operativnye_dannye_8_aprelya_2020_goda%22%3Bi%3A1%3Bs%3A38%3A%22operativnye_dannye_8_aprelya_2020_goda%22%3B%7D
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	antikrizisnye_mery_v_kompanii__raz__gruzchiki_	332a15c74ef121f1eb8785920f9f6516e2911761fa67012b0b59af39582cd4e5a%3A2%3A%7Bi%3A0%3Bs%3A46%3A%22antikrizisnye_mery_v_kompanii__raz__gruzchiki_%22%3Bi%3A1%3Bs%3A46%3A%22antikrizisnye_mery_v_kompanii__raz__gruzchiki_%22%3B%7D
+irkutsk.razgruzchiki.ru	TRUE	/	FALSE	1999999999	SameSite	Lax
+.vk.com	TRUE	/	FALSE	1999999999	remixlang	3
+.vk.com	TRUE	/	FALSE	1999999999	remixstlid	9076259568756084735_LDbfAZsHbYmv5ytaVP6hUTEQQ0SD8acfJnTbdZVPre0
+.vk.com	TRUE	/	FALSE	1999999999	remixir	DELETED
+.vk.com	TRUE	/	FALSE	1999999999	remixua	-1%7C-1%7C-1%7C2390312892
+.ok.ru	TRUE	/	FALSE	1999999999	landref	irkutsk.razgruzchiki.ru
+

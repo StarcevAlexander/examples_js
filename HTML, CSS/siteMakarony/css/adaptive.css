@@ -1,0 +1,414 @@
+/* -1229 */
+
+@media screen and (max-width: 1229px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+/* -1165 */
+
+@media screen and (max-width: 1165px) {
+    .contacts a {
+        margin-left: 0;
+    }
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo {
+        margin-right: 0;
+    }
+}
+
+
+/* 768-1023 */
+
+@media screen and (max-width: 1023px) {
+    .container {
+        overflow: hidden;
+    }
+    .header .contacts {
+        opacity: 0;
+        z-index: -99999;
+    }
+    .present {
+        display: none;
+    }
+    .first {
+        padding-top: 54px;
+        padding-bottom: 303px;
+    }
+    .first-img {
+        position: absolute;
+        top: 410px;
+        left: 183px;
+    }
+    .second-presentation {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .second-decription {
+        max-width: none;
+        height: 314px;
+    }
+    .second-decription-title {
+        max-width: 643px;
+    }
+    .second-decription-text {
+        max-width: 670px;
+    }
+    .big-makoron img {
+        max-width: 295px;
+    }
+    .cards {
+        margin-top: 146px;
+        padding-left: 125px;
+        padding-right: 125px;
+        flex-wrap: wrap;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 45px;
+        width: 218px;
+    }
+    .card-text {
+        text-align: center;
+    }
+    .third-items {
+        flex-wrap: wrap;
+        padding-left: 92px;
+        padding-right: 92px;
+        padding-bottom: 0;
+    }
+    .item {
+        margin-bottom: 135px;
+    }
+    .fourth-image {
+        order: 1;
+    }
+    .fourth-two-colums {
+        padding-left: 20px;
+    }
+    .fourth-description {
+        position: static;
+        max-width: 406px;
+    }
+    .jump-food-1 {
+        right: 106px;
+        top: 220px;
+    }
+    .jump-food-2 {
+        left: 375px;
+        top: 390px;
+    }
+    .fourth-image {
+        top: 260px;
+        left: 400px;
+        position: absolute;
+    }
+    .social {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .menu,
+    .contacts {
+        display: none;
+    }
+    .first .container {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .discription {
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        z-index: 1;
+    }
+    .description-text {
+        margin: 0 auto;
+        margin-bottom: 45px;
+    }
+    .first-img {
+        position: static;
+        margin-top: 38px;
+    }
+    .first-img img {
+        max-width: 350px;
+    }
+    .discription .button {
+        margin: 0 auto;
+    }
+    .discription h1 {
+        margin-bottom: 45px;
+    }
+    .first {
+        padding-bottom: 0px;
+    }
+    .second-decription-text {
+        margin: 0 auto;
+    }
+    .second-decription-title {
+        font-size: 37px;
+    }
+    .big-makoron {
+        top: 40px;
+    }
+    .cards {
+        display: flex;
+        justify-content: center;
+        margin-top: 110px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .card-title {
+        text-align: center;
+    }
+    .card {
+        width: 325px;
+    }
+    .second {
+        margin-bottom: -60px;
+    }
+    .third .container {
+        padding-top: 110px;
+        text-align: center;
+    }
+    .third-items {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: -20px;
+        justify-content: space-around;
+    }
+    .item {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .fourth-title {
+        font-size: 35px;
+    }
+    .jump-food-1 {
+        display: none;
+    }
+    .fourth-image {
+        display: none;
+    }
+    .jump-food-2 {
+        left: 330px;
+    }
+    .fourth-two-colums {
+        padding-right: 20px;
+    }
+    .fourth .container {
+        padding-bottom: 90px;
+    }
+    .footer .container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .rights {
+        position: absolute;
+        bottom: 10px;
+        left: calc(50% - 62px);
+    }
+    .footer .contacts {
+        display: flex;
+        justify-content: center;
+    }
+    .social {
+        margin-bottom: 20px;
+    }
+    .burger {
+        display: block;
+    }
+    .burger svg {
+        width: 36px;
+        height: 36px;
+        fill: rgb(130, 19, 40);
+        margin-right: 20px;
+    }
+    .menu.open {
+        display: flex;
+        align-items: center;
+    }
+    .menu .close {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: rgb (164, 107, 0);
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+        background: #000000c9;
+    }
+    .menu ul {
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .menu ul a {
+        font-size: 40px;
+        font-weight: 1200;
+        color: red;
+        font-family: "GilroyExtraBold", sans-serif;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .first h1 {
+        font-size: 32px;
+    }
+    .description-text {
+        margin: 0 auto;
+        font-size: 16px;
+        font-family: "Tavolga";
+        line-height: 1.438;
+        width: 100%;
+        height: 62px;
+        z-index: 26;
+        margin-bottom: 45px;
+    }
+    .first-img img {
+        max-width: 250px;
+    }
+    .first .container {
+        display: flex;
+        padding-bottom: 43px;
+    }
+    .first .container {
+        margin-top: -8px;
+    }
+    .second-decription-title {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    .second-decription-text {
+        font-size: 16px;
+    }
+    .big-makoron {
+        top: 63px;
+    }
+    .big-makoron img {
+        max-width: 300px;
+    }
+    .cards {
+        margin-top: 115px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 100px;
+    }
+    .card {
+        width: 165px;
+    }
+    .card-title {
+        font-size: 18px;
+        line-height: 2.496;
+    }
+    .third .container {
+        padding-top: 100px;
+    }
+    .third-title {
+        font-size: 30px;
+        padding-bottom: 122px;
+    }
+    .third-items {
+        padding-left: 43px;
+        padding-right: 43px;
+        margin-top: auto;
+    }
+    .sold-out {
+        align-items: baseline;
+    }
+    .fourth-text {
+        font-size: 16px;
+        width: 338px;
+    }
+    .itput-text {
+        width: 313px;
+    }
+    .fourth-button {
+        width: 343px;
+    }
+    .jump-food-2 {
+        left: 280px;
+        top: 195px;
+    }
+    .fourth .container {
+        /* padding-bottom: 76px
+     */
+        display: flex;
+    }
+    .footer .logo {
+        order: 1;
+    }
+    .footer .contacts {
+        order: 2;
+    }
+    .social {
+        order: 3;
+        padding-top: 40px;
+    }
+    .rights {
+        margin-bottom: 40px;
+    }
+    .social-text {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .burger {
+        right: -135px;
+    }
+    .big-makoron {
+        top: 120px;
+    }
+    .cards {
+        margin-top: 150px;
+    }
+    .sold-out {
+        padding-left: 10px;
+    }
+    .jump-food-2 {
+        left: 230px;
+        top: 230px;
+    }
+    .fourth-title,
+    .fourth-text {
+        max-width: 290px;
+    }
+    .itput-text {
+        max-width: 258px;
+    }
+    .fourth-button {
+        width: 285px;
+    }
+    .third-items {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

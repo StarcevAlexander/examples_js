@@ -1,0 +1,433 @@
+/* -1225 */
+
+@media screen and (max-width: 1225px) {
+    .header .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .first .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .invisible-text {
+        font-size: 150px;
+    }
+    .second .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .third .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 100px;
+        border: none;
+    }
+    .fourth .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .fifth .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        border: none;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    .sixth .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .seventh .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .fifth-two-colums {
+        margin-top: 50px;
+    }
+    .seventh .container {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 1088px) {
+    .second .container {
+        flex-direction: column;
+        align-items: center;
+        height: 220px;
+    }
+    .third-two-colons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .third-two-colons-2 {
+        margin-top: 15px;
+    }
+    .fifth-two-colums {
+        flex-direction: column;
+        align-items: center;
+    }
+    .fifth-column:last-child {
+        margin-top: 50px;
+    }
+    .fifth-column {
+        width: 500px;
+    }
+    .fifth-two-colums {
+        width: 800px;
+    }
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .map iframe {
+        width: 600px;
+        height: 350px
+    }
+    .two-elements {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-list {
+        margin-bottom: 15px;
+    }
+    .rights {
+        width: 320px;
+    }
+    .carusel-bl {
+        width: 800px;
+    }
+}
+
+
+/* -1024 */
+
+@media screen and (max-width: 1025px) {
+    .container {
+        max-width: 100%;
+    }
+    .invisible-text {
+        display: none;
+    }
+    .third .container {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    .third-two-colons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .third-two-colons-2 {
+        margin-top: 15px;
+    }
+    .picture-3-1 {
+        display: none;
+    }
+    .tree-textas {
+        width: 750px;
+        height: 220px;
+    }
+    .two-elements {
+        flex-direction: column;
+        align-items: center;
+    }
+    .fifth .container {
+        margin-top: 70px;
+        margin-bottom: 70px;
+        width: 375px;
+    }
+    .seventh .container {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    .carusel-bl {
+        width: 460px;
+    }
+    .text-list {
+        height: 280px;
+        margin-bottom: 30px;
+    }
+    .map iframe {
+        width: 760px;
+        height: 400px
+    }
+    .first-some {
+        margin-top: 0;
+        margin-left: 30px;
+        max-height: 300px;
+    }
+    .tree-textas {
+        margin-top: 40px;
+        width: 700px;
+    }
+    .seventh-tex {
+        width: 700px;
+    }
+    .three-elements {
+        align-items: center;
+        flex-direction: column;
+    }
+    .popup-first {
+        width: auto;
+    }
+    .popup-second {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .fifth-service-text {
+        width: auto;
+    }
+    .skidka {
+        font-size: 20px;
+    }
+    .header .container {
+        padding: 30px 0;
+        width: 375px;
+    }
+    .first-some {
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        width: 90%;
+        font-size: 25px;
+        text-align: center;
+    }
+    .first-some-2 {
+        font-size: 17px;
+        text-align: center;
+    }
+    .tree-textas {
+        width: 400px;
+        margin: 0 auto;
+    }
+    .tree-textas-element {
+        width: 90%;
+        margin: 0 auto
+    }
+    .menu {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .close svg {
+        fill: rgb(255, 255, 255);
+    }
+    .burger svg {
+        width: 36px;
+        height: 36px;
+        fill: rgb(255, 255, 255);
+        margin-right: 20px;
+    }
+    .menu.open {
+        display: flex;
+        align-items: center;
+    }
+    .menu .close {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: rgb(255, 255, 255);
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+        background: #000000c9;
+    }
+    .menu ul {
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .menu ul a {
+        font-size: 40px;
+        font-weight: 1200;
+        color: rgb(255, 255, 255);
+        font-family: "GilroyExtraBold", sans-serif;
+    }
+    .first img {
+        display: none
+    }
+    .first .container {
+        height: 360px;
+    }
+    .third-header div {
+        font-size: 20px;
+    }
+    .second .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .second {
+        padding: 20px 0;
+    }
+    .advantage {
+        margin: 10px;
+    }
+    .third-two-colons-1 {
+        display: none;
+    }
+    .third-two-colons-2 {
+        margin-top: 15px;
+    }
+    .third-header {
+        margin-bottom: 0;
+    }
+    .third h2 {
+        width: 90%;
+        max-width: 400px;
+    }
+    .tree-textas {
+        height: 320px;
+        margin-top: 0;
+    }
+    .fourth .container {
+        padding: 20px 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    .fourth-text {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .seventh-text {
+        max-width: none;
+        width: 90%;
+    }
+    .fifth-text-header {
+        text-align: center;
+    }
+    .sixth .container {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .seventh-title {
+        margin-bottom: 20px;
+    }
+    .content {
+        display: none;
+    }
+    .carusel-bl {
+        width: 396px;
+    }
+    .seventh-text {
+        margin-bottom: 20px;
+    }
+    .map iframe {
+        width: 100%;
+        height: 100%;
+    }
+    .footer .container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .rights {
+        margin-top: 30px;
+    }
+    .fifth-column {
+        width: auto;
+    }
+    .first-some {
+        margin: 0 auto;
+    }
+    .first-some-1 {
+        text-align: center;
+    }
+    .container {
+        max-width: 100%;
+    }
+    .third-header div {
+        max-width: 100%;
+    }
+    .tree-textas {
+        width: 100%;
+    }
+    .tree-textas-element {
+        text-align: center;
+    }
+    .seventh .container {
+        margin: 20px auto;
+    }
+    .fifth-two-colums {
+        width: auto;
+    }
+    .arrows {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .second .container {
+        height: 370px;
+    }
+    .skidka {
+        font-size: 18px;
+    }
+    .contacts {
+        display: none;
+    }
+    .first-some-2 {
+        text-align: center;
+    }
+    .third h2 {
+        margin-top: 70px;
+    }
+    .tree-textas {
+        height: 400px;
+    }
+    .tree-textas-element {
+        margin-bottom: 15px;
+    }
+    .third .container {
+        margin-top: 0;
+    }
+    .slick-center {
+        height: 350px;
+        min-width: 295px;
+    }
+    .carusel-bl {
+        width: 295px;
+    }
+    .arrows {
+        margin-top: -120px;
+    }
+    .advantage {
+        flex-direction: column;
+    }
+    .adv-text {
+        margin: 10px;
+    }
+    .third .container {
+        margin-bottom: 100px;
+    }
+    .fourth-text {
+        max-width: 100%;
+    }
+    .header .container {
+        width: 295px;
+    }
+    .fifth-service-text {
+        text-align: center;
+    }
+    .slider-item,
+    .master {
+        height: 404px;
+        width: 320px;
+    }
+}

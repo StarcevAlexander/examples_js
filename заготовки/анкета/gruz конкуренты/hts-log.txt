@@ -1,0 +1,52 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 25 Apr 2023 12:09:22 at https://irkutsk.razgruzchiki.ru/ +*.svg +*.ico +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F  -%F  -%l "en, *" https://irkutsk.razgruzchiki.ru/ -O1 "C:\My Web Sites\gruz" +*.svg +*.ico +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+12:11:56	Warning: 	Link https://irkutsk.razgruzchiki.ru/cdn-cgi/l/email-protection not scanned (follow robots meta tag)
+12:11:58	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/assets/9b32aba3/webfonts/fa-brands-400.woff2
+12:11:58	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/assets/9b32aba3/webfonts/fa-regular-400.woff2
+12:11:58	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/assets/9b32aba3/webfonts/fa-solid-900.woff2
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/images/bg_man_service-mask2.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/images/bg_s1-min.webp
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/images/blank.gif (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/jquery.fancybox.css?v=1682109969)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/fancybox_loading@2x.gif (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/jquery.fancybox.css?v=1682109969)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/images/star.svg (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/thebest-workers.css?v=1662462023)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/images/empty-star.svg (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/thebest-workers.css?v=1662462023)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen.eot (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen.eot? (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen.otf (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen.svg (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen.ttf (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen.woff (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen.woff2 (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-Italic.eot (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-Italic.eot? (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-Italic.otf (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-Italic.svg (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-Italic.ttf (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-Italic.woff (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-Italic.woff2 (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-BoldItalic.eot (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-BoldItalic.eot? (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-BoldItalic.otf (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-BoldItalic.svg (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-BoldItalic.ttf (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-BoldItalic.woff (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/fonts/Oxygen-BoldItalic.woff2 (from https://irkutsk.razgruzchiki.ru/themes/razgruzchiki/css/helper-icxp.css?v=1656525968)
+12:11:59	Error: 	"Not Found" (404) at link https://irkutsk.razgruzchiki.ru/service/pomosh (from https://irkutsk.razgruzchiki.ru/service/raznorabochie)
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5df21fa7c4abd.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5df24bb5d6722.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5df2eaf130315.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5dfc8bff09841.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5df2ef77a06e7.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5df2f0b36c8c7.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5df2f434c5dd1.webp
+12:11:59	Warning: 	File not parsed, looks like binary: https://irkutsk.razgruzchiki.ru/upload/5df2f33c14d53.webp
+12:12:02	Warning: 	link is probably looping, type unknown, aborting: https://m.vk.com/share.php?url=https%3A%2F%2Firkutsk.razgruzchiki.ru%2Fblog%2Fantikrizisnye_mery_v_kompanii__raz__gruzchiki_&title=%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D1%80%D0%B8%D0%B7%D0%B8%D1%81%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%B5%D1%80%D1%8B%20%D0%B2%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8%20%22%D0%A0%D0%B0%D0%B7%21%20%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8%22&description=%3Cp%3E%D0%9A%D0%B0%D0%BA%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%D1%82%20%D0%B0%D0%BD%D1%82%D0%B8%D0%BA%D1%80%D0%B8%D0%B7%D0%B8%D1%81%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%B5%D1%80%D1%8B%20%D0%B2%D0%BE%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%BA%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%B0%20%D0%B2%20%D0%BD%D0%B0%D1%88%D0%B5%D0%B9%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8.%3C%2Fp%3E&image=https%3A%2F%2Firkutsk.razgruzchiki.ru%2Fupload%2F5e89c77822d7e.jpg
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 minutes 2 seconds : 444 links scanned, 417 files written (29275112 bytes overall) [24008952 bytes received at 131917 bytes/sec], 9643268 bytes transferred using HTTP compression in 183 files, ratio 30%, 19.0 requests per connection
+(26 errors, 15 warnings, 0 messages)

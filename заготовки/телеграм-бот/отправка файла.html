@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <form id="tg">
+      <div class="form-group">
+        <label for="formFile" class="form-label">Default</label>
+        <input class="form-control" id="customFileLg">
+      </div>
+    </form>    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    //номер токена
+    const TOKEN = "6273687344:AAEQLqI3VI87fxNeHrgcALkeq0ekQ-jB6ps"
+    //номер айдишника чата
+    const CHAT_ID = "-1001711407669"
+    //ссылка на чат
+    const url_api = `https://api.telegram.org/bot${TOKEN}/sendMessage`
+    //слушатель на форму по её айди
+    const success = document.getElementById('success')
+    //блок с подтверждением отправки
+    document.getElementById('tg').addEventListener('submit', function(e) {
+      //сброс настроек
+      e.preventDefault();
+      let message = `<b>Сообщение с сайта: </b> \n ${ this.texta.value}`
+      axios.post(url_api, {
+        chat_id: CHAT_ID,
+        parse_mode: 'html',
+        text: message
+      })
+      .then((res)=>{
+        this.texta.value = '';
+        document.getElementById('exampleInputPassword1').value = ''
+        //обнуляем содержимое в инпуте
+        success.style.display = 'block';
+      })
+      .catch((err) => {
+        console.warn(err)
+      })
+      .finally(() => {console.log('конец')})
+    })
+  </script>
+  </body>
+  </html>

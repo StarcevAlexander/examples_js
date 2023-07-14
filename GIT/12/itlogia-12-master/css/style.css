@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Nunito";
+  src: url(../fonts/Nunito-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Nunito, sans-serif;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  /*   max-width: 1091px; */
+  margin: 0 auto;
+}
+.first {
+  width: 50%;
+  background-color: #231d2e;
+}
+
+.container {
+  padding: 194px 75px 191px 244px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #000000;
+  line-height: 49px;
+  margin-bottom: 7px;
+}
+
+.text {
+  font-size: 22px;
+  /*   line-height: 27px; */
+  color: #636363;
+  margin-bottom: 54px;
+}
+
+.text-input {
+  font-size: 16px;
+  /*   line-height: 27px; */
+  color: #c6c6c4;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 452px;
+  /*  height: 24px; */
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #c6c6c4;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  width: 210px;
+  height: 70px;
+  background: #dd3142;
+  border-radius: 40px;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+}
+
+.checkbox {
+  margin: 30px 0 36px 0;
+  font-size: 16px;
+  line-height: 27px;
+  color: #636363;
+  outline: none;
+}
+
+.btn-text {
+  margin-top: 44px;
+  font-size: 16px;
+  line-height: 27px;
+  color: #636363;
+}
+
+.second {
+  background: #2c2c84;
+  width: 50%;
+}
+
+.second img {
+  position: relative;
+  top: 254px;
+  left: 11px;
+  width: 543px;
+  height: 600px;
+}
+
+.logo {
+  position: absolute;
+  left: calc(50% - 131px);
+  width: 262px;
+  height: 55px;
+  top: 30px;
+}
+
+.popup-container {
+  display: none; /* flex */
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999999999;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  display: flex;
+  background-color: white;
+  border: 1px solid black;
+  height: 200px;
+  padding: 50px;
+  width: 0 auto;
+}
+.pop-text {
+  text-align: center;
+  width: 400px;
+  font-size: 22px;
+}
+.pop-btn {
+  position: relative;
+  bottom: 125px;
+}
+.btn2 {
+  margin-top: 50px;
+}
+.h1 {
+  margin-bottom: 50px;
+}
+
+.img2 img {
+  top: 184px;
+}

@@ -1,0 +1,10 @@
+Создать в корне сайта (папка www или public_html) 
+файл .htaccess
+
+внутрь него положить данный код и сохранить файл
+
+RewriteEngine on
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]

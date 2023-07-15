@@ -1,0 +1,29 @@
+.some{
+  font-size: 72px;
+}
+
+.go-top {
+  position: fixed; /* фиксированное позиционирование */
+  right: 20px; /* отступ слева 20px */
+  top: 50%; /* выравниваем по центру */
+  transform: translateY(-50%); /* выравниваем по центру */
+  cursor: pointer; /* при наведении меняем курсор */
+  display: none; /* по умолчанию скрываем кнопку */
+  font-size: 30px;
+  color: rgba(0, 51, 153, 0.5);
+  border: 1px solid rgba(0, 51, 153, 0.5);
+  background-color: red;
+  padding: 15px 10px;
+}
+
+/* меняем прозрачность при наведении мышкой */
+.go-top:hover {
+  color: rgba(0, 51, 153, 0.8);
+  border: 1px solid rgba(0, 51, 153, 0.8);
+  background-color: green;
+}
+
+/* модификатор для отображения кнопки */
+.go-top--show {
+  display: block;
+}

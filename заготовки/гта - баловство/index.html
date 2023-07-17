@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="my-element">
+      ★
+      <div class="my-element">
+        ★
+        <div class="my-element">
+          ★
+          <div class="my-element">
+            ★
+            <div class="my-element">★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .my-element {
+        display: flex;
+        flex-direction: row-reverse;
+        color: yellow; /* Изначальный цвет элемента */
+      }
+
+      .my-element:hover {
+        cursor: pointer;
+        color: red; /* Цвет элемента при наведении на него курсора и после нажатия на него */
+      }
+
+      * {
+        font-size: 50px;
+      }
+    </style>
+  </body>
+</html>

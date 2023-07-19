@@ -6,59 +6,237 @@
     <title>Document</title>
   </head>
   <style>
-    .rating-area {
-      overflow: hidden;
-      width: 265px;
-      margin: 0 auto;
-    }
-    .rating-area:not(:checked) > input {
-      display: none;
-    }
-    .rating-area:not(:checked) > label {
-      float: right;
-      width: 42px;
-      padding: 0;
-      cursor: pointer;
-      font-size: 32px;
-      line-height: 32px;
-      color: lightgrey;
-      text-shadow: 1px 1px #bbb;
-    }
-    .rating-area:not(:checked) > label:before {
-      content: "★";
-    }
-    .rating-area > input:checked ~ label {
-      color: gold;
-      text-shadow: 1px 1px #c60;
-    }
-    .rating-area:not(:checked) > label:hover,
-    .rating-area:not(:checked) > label:hover ~ label {
-      color: gold;
-    }
-    .rating-area > input:checked + label:hover,
-    .rating-area > input:checked + label:hover ~ label,
-    .rating-area > input:checked ~ label:hover,
-    .rating-area > input:checked ~ label:hover ~ label,
-    .rating-area > label:hover ~ input:checked ~ label {
-      color: gold;
-      text-shadow: 1px 1px goldenrod;
-    }
-    .rate-area > label:active {
+    .rating {
+      display: inline-block;
       position: relative;
+      height: 50px;
+      line-height: 50px;
+      font-size: 50px;
+    }
+
+    .rating label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .rating label:last-child {
+      position: static;
+    }
+
+    .rating label:nth-child(1) {
+      z-index: 5;
+    }
+
+    .rating label:nth-child(2) {
+      z-index: 4;
+    }
+
+    .rating label:nth-child(3) {
+      z-index: 3;
+    }
+
+    .rating label:nth-child(4) {
+      z-index: 2;
+    }
+
+    .rating label:nth-child(5) {
+      z-index: 1;
+    }
+
+    .rating label input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    .rating label .icon {
+      float: left;
+      color: transparent;
+    }
+
+    .rating label:last-child .icon {
+      color: #000;
+    }
+
+    .rating:not(:hover) label input:checked ~ .icon,
+    .rating:hover label:hover input ~ .icon {
+      color: #09f;
+    }
+
+    .rating label input:focus:not(:checked) ~ .icon:last-child {
+      color: #000;
+      text-shadow: 0 0 5px #09f;
     }
   </style>
   <body>
-    <div class="rating-area">
-      <input type="radio" id="star-5" name="rating" value="5" />
-      <label for="star-5" title="Оценка «5»"></label>
-      <input type="radio" id="star-4" name="rating" value="4" />
-      <label for="star-4" title="Оценка «4»"></label>
-      <input type="radio" id="star-3" name="rating" value="3" />
-      <label for="star-3" title="Оценка «3»"></label>
-      <input type="radio" id="star-2" name="rating" value="2" />
-      <label for="star-2" title="Оценка «2»"></label>
-      <input type="radio" id="star-1" name="rating" value="1" />
-      <label for="star-1" title="Оценка «1»"></label>
-    </div>
+    <br />
+    <form class="rating">
+      <label>
+        <input type="radio" name="stars" value="1" />
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="2" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="3" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="4" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="5" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+    </form>
+    <br />
+    <form class="rating">
+      <label>
+        <input type="radio" name="stars" value="1" />
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="2" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="3" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="4" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="5" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+    </form>
+    <br />
+    <form class="rating">
+      <label>
+        <input type="radio" name="stars" value="1" />
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="2" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="3" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="4" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="5" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+    </form>
+    <br />
+    <form class="rating">
+      <label>
+        <input type="radio" name="stars" value="1" />
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="2" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="3" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="4" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="5" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+    </form>
+    <br />
+    <form class="rating">
+      <label>
+        <input type="radio" name="stars" value="1" />
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="2" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="3" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="4" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="5" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+    </form>
   </body>
 </html>

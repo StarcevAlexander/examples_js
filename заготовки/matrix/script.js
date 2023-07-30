@@ -49,3 +49,8 @@ fpsCtrl.onFinishChange((fps) => {
   }
   interval = setInterval(draw, 1000 / fps);
 });
+
+document.querySelector('.color').querySelector('.property-name').innerHTML = 'Цвет'
+document.querySelectorAll('.number')[0].querySelector('.property-name').innerHTML = 'Скорость'
+document.querySelector('.string').querySelector('.property-name').innerHTML = 'Символы'
+document.querySelectorAll('.number')[1].querySelector('.property-name').innerHTML = 'Размер'

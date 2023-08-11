@@ -1,0 +1,84 @@
+.conteiner-reg {
+  padding: 281px;
+}
+
+form {
+  width: 397px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 397px;
+  height: 38px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.input-group span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: #ced4da;
+}
+
+input[type="text"] {
+  padding-left: 13px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 15px;
+}
+
+.border-none {
+  border: none !important;
+}
+.form-control {
+  width: 359px;
+  height: 34px;
+}
+
+.last {
+  margin-bottom: 20px;
+}
+
+.reglink {
+  position: relative;
+  right: 56px;
+}
+.loglink {
+  position: relative;
+  right: 40px;
+}
+
+.agree-input {
+  margin-bottom: 20px;
+  position: relative;
+  right: 139px;
+  display: flex;
+  align-items: center;
+}
+
+.agree-input label {
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+}
+
+.border-all {
+  border-radius: 4px;
+}

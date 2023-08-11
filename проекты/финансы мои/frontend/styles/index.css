@@ -1,0 +1,64 @@
+h1 {
+  margin-bottom: 60px;
+}
+
+.container {
+  width: 397px;
+}
+.main{
+  padding: 100px 94px 100px 60px;
+}
+.button-panel {
+  margin-right: 282px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-btn {
+  font-size: 16px;
+  width: 100px;
+  height: 37px;
+  background-color: white;
+  border: 1px solid #6c757d;
+  border-radius: 4px;
+}
+.panel-btn:hover {
+  color: #ffffff;
+  background-color: #6c757d;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+.date input {
+  padding: 8px 12px;
+  font-size: 16px;
+  width: 63px;
+  background-color: white;
+  border: 1px solid #6c757d;
+  border-radius: 4px;
+}
+.date input::placeholder {
+  padding: 9px 12px;
+  text-decoration: underline;
+  font-size: 16px;
+}
+.main-pies {
+  display: flex;
+  padding-left: 24px;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 140px;
+  height: 467px;
+  width: 50%;
+  overflow: visible;
+}
+.chart-container:first-child {
+  border-right: 1px solid #d9d9d9;
+}

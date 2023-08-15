@@ -11,38 +11,47 @@ export class Main {
     new fullName()
     new BalanceMoneyInMenu()
     new PopupLogout()
-    this.restart()
-    this.startMain()
     new Refresh()
     this.clickButtons()
+    this.showAllOperations('all')
   }
   clickButtons() {
     document.getElementById('today').addEventListener('click', () => {
-      this.restart()
-      this.showToday()
+      this.showAllOperations('today')
     })
     document.getElementById('week').addEventListener('click', () => {
-      this.restart()
-      this.showWeek()
+      this.showAllOperations('week')
     })
     document.getElementById('month').addEventListener('click', () => {
-      this.restart()
-      this.showMounth()
+      this.showAllOperations('month')
     })
     document.getElementById('year').addEventListener('click', () => {
-      this.restart()
-      this.showYear()
+      this.showAllOperations('year')
     })
     document.getElementById('all').addEventListener('click', () => {
-      this.restart()
-      this.startMain()
+      this.showAllOperations('all')
     })
     document.getElementById('interval').addEventListener('click', () => {
-      this.restart()
-      this.showInterval()
+      let dateFrom = document.getElementById('date-start').value
+      let dateTo = document.getElementById('date-end').value
+      const regex = /^\d{4}-\d{2}-\d{2}$/;
+
+      if (!dateFrom || !regex.test(dateFrom)) {
+        alert('введите дату отсчёта в формате YYYY-MM-DD');
+        return
+      }
+      else if (!dateTo || !regex.test(dateTo)) {
+        alert('введите дату окночания в формате YYYY-MM-DD');
+        return
+      }
+      else if (dateFrom && dateTo) {
+        let interval = `interval&dateFrom=${dateFrom}&dateTo='${dateTo}`
+        this.showAllOperations(interval)
+      }
     })
   }
-  restart() {
+
+  showAllOperations(param) {
     document.getElementById('main-pies').innerHTML = ''
     document.getElementById('main-pies').innerHTML =
       `<div class="chart-container">
@@ -51,116 +60,6 @@ export class Main {
     <div class="chart-container">
       <canvas id="myChart2"></canvas>
     </div>`
-  }
-  showToday() {
-    let today = new Date().toISOString().split('T')[0];
-    let xAuthToken = localStorage.getItem("accessToken")
-
-    if (xAuthToken) {
-      var myHeaders = new Headers();
-      myHeaders.append("x-auth-token", xAuthToken);
-
-      var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
-
-      fetch('http://localhost:3000/api/operations?period=interval&dateFrom=' + today + '&' + 'dateTo=' +
-        today, requestOptions)
-        .then(response => response.json())
-        .then(result => {
-
-          //отрисовываем суммы расходов
-          let expenses = result.filter(operation => operation.type === "expense").map(operation => operation.amount);
-          let expensesComment = result.filter(operation => operation.type === "expense").map(operation => operation.comment);
-
-          // отрисовываем суммы доходов
-          let incomes = result.filter(operation => operation.type === "income").map(operation => operation.amount);
-          let incomesComment = result.filter(operation => operation.type === "income").map(operation => operation.comment);
-
-          new Chart(document.getElementById("myChart1"), {
-            type: "pie",
-            data: {
-              labels: incomesComment,
-              datasets: [
-                {
-                  data: incomes,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Доходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-
-
-          new Chart(document.getElementById("myChart2"), {
-            type: "pie",
-            data: {
-              labels: expensesComment,
-              datasets: [
-                {
-                  data: expenses,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Расходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-        }
-        )
-        .catch(error => console.log('error', error));
-    }
-  }
-  showWeek() {
     let xAuthToken = localStorage.getItem("accessToken")
     if (xAuthToken) {
       var myHeaders = new Headers();
@@ -171,8 +70,7 @@ export class Main {
         headers: myHeaders,
         redirect: 'follow'
       };
-
-      fetch("http://localhost:3000/api/operations?period=week", requestOptions)
+      fetch("http://localhost:3000/api/operations?period=" + param, requestOptions)
         .then(response => response.json())
         .then(result => {
 
@@ -265,450 +163,6 @@ export class Main {
         )
         .catch(error => console.log('error', error));
     }
-
-  }
-  showMounth() {
-    let xAuthToken = localStorage.getItem("accessToken")
-    if (xAuthToken) {
-      var myHeaders = new Headers();
-      myHeaders.append("x-auth-token", xAuthToken);
-
-      var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
-
-      fetch("http://localhost:3000/api/operations?period=month", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-
-          //отрисовываем суммы расходов
-          let expenses = result.filter(operation => operation.type === "expense").map(operation => operation.amount);
-          let expensesComment = result.filter(operation => operation.type === "expense").map(operation => operation.comment);
-
-          // отрисовываем суммы доходов
-          let incomes = result.filter(operation => operation.type === "income").map(operation => operation.amount);
-          let incomesComment = result.filter(operation => operation.type === "income").map(operation => operation.comment);
-
-
-          new Chart(document.getElementById("myChart1"), {
-            type: "pie",
-            data: {
-              labels: incomesComment,
-              datasets: [
-                {
-                  data: incomes,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Доходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-
-
-          new Chart(document.getElementById("myChart2"), {
-            type: "pie",
-            data: {
-              labels: expensesComment,
-              datasets: [
-                {
-                  data: expenses,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Расходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-        }
-        )
-        .catch(error => console.log('error', error));
-    }
-
-  }
-  showYear() {
-    let xAuthToken = localStorage.getItem("accessToken")
-    if (xAuthToken) {
-      var myHeaders = new Headers();
-      myHeaders.append("x-auth-token", xAuthToken);
-
-      var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
-
-      fetch("http://localhost:3000/api/operations?period=year", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-
-          //отрисовываем суммы расходов
-          let expenses = result.filter(operation => operation.type === "expense").map(operation => operation.amount);
-          let expensesComment = result.filter(operation => operation.type === "expense").map(operation => operation.comment);
-
-          // отрисовываем суммы доходов
-          let incomes = result.filter(operation => operation.type === "income").map(operation => operation.amount);
-          let incomesComment = result.filter(operation => operation.type === "income").map(operation => operation.comment);
-
-
-          new Chart(document.getElementById("myChart1"), {
-            type: "pie",
-            data: {
-              labels: incomesComment,
-              datasets: [
-                {
-                  data: incomes,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Доходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-
-
-          new Chart(document.getElementById("myChart2"), {
-            type: "pie",
-            data: {
-              labels: expensesComment,
-              datasets: [
-                {
-                  data: expenses,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Расходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-        }
-        )
-        .catch(error => console.log('error', error));
-    }
-
-  }
-  showInterval() {
-    let dateFrom = document.getElementById('date-start').value
-    let dateTo = document.getElementById('date-end').value
-    let xAuthToken = localStorage.getItem("accessToken")
-    const regex = /^\d{4}-\d{2}-\d{2}$/;
-
-    if (!dateFrom || !regex.test(dateFrom)) {
-      alert('введите дату отсчёта в формате YYYY-MM-DD');
-      this.startMain()
-    }
-    else if (!dateTo || !regex.test(dateTo)) {
-      alert('введите дату отсчёта в формате YYYY-MM-DD');
-      this.startMain()
-    }
-
-    else if (xAuthToken && dateFrom && dateTo) {
-      var myHeaders = new Headers();
-      myHeaders.append("x-auth-token", xAuthToken);
-
-      var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
-
-
-
-      fetch('http://localhost:3000/api/operations?period=interval&dateFrom=' + dateFrom + '&' + 'dateTo=' +
-        dateTo, requestOptions)
-        .then(response => response.json())
-        .then(result => {
-
-          //отрисовываем суммы расходов
-          let expenses = result.filter(operation => operation.type === "expense").map(operation => operation.amount);
-          let expensesComment = result.filter(operation => operation.type === "expense").map(operation => operation.comment);
-
-          // отрисовываем суммы доходов
-          let incomes = result.filter(operation => operation.type === "income").map(operation => operation.amount);
-          let incomesComment = result.filter(operation => operation.type === "income").map(operation => operation.comment);
-
-
-          new Chart(document.getElementById("myChart1"), {
-            type: "pie",
-            data: {
-              labels: incomesComment,
-              datasets: [
-                {
-                  data: incomes,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Доходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-
-
-          new Chart(document.getElementById("myChart2"), {
-            type: "pie",
-            data: {
-              labels: expensesComment,
-              datasets: [
-                {
-                  data: expenses,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Расходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-        }
-        )
-        .catch(error => console.log('error', error));
-    }
-
-  }
-  startMain() {
-    let xAuthToken = localStorage.getItem("accessToken")
-    if (xAuthToken) {
-      var myHeaders = new Headers();
-      myHeaders.append("x-auth-token", xAuthToken);
-
-      var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
-      fetch("http://localhost:3000/api/operations?period=all", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-
-          //отрисовываем суммы расходов
-          let expenses = result.filter(operation => operation.type === "expense").map(operation => operation.amount);
-          let expensesComment = result.filter(operation => operation.type === "expense").map(operation => operation.comment);
-
-          // отрисовываем суммы доходов
-          let incomes = result.filter(operation => operation.type === "income").map(operation => operation.amount);
-          let incomesComment = result.filter(operation => operation.type === "income").map(operation => operation.comment);
-
-
-          new Chart(document.getElementById("myChart1"), {
-            type: "pie",
-            data: {
-              labels: incomesComment,
-              datasets: [
-                {
-                  data: incomes,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Доходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-
-
-          new Chart(document.getElementById("myChart2"), {
-            type: "pie",
-            data: {
-              labels: expensesComment,
-              datasets: [
-                {
-                  data: expenses,
-                  backgroundColor: [
-                    "red", "orange", "yellow", "green", "blue", "aqua", "black", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"],
-                  hoverOffset: -20,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  labels: {
-                    font: {
-                      size: 12
-                    },
-                    color: 'black',
-                  },
-                },
-                title: {
-                  display: true,
-                  text: 'Расходы',
-                  color: 'black',
-                  font: {
-                    size: 28,
-                  },
-                  padding: {
-                    bottom: 20
-                  }
-                }
-              }
-            }
-          });
-        }
-        )
-        .catch(error => console.log('error', error));
-    }
-
   }
 }
 

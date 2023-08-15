@@ -40,7 +40,7 @@ export class InAdd {
       fetch("http://localhost:3000/api/categories/income", requestOptions)
         .then(() => {
           alert('Категория создана');
-          location.href = '#/out'
+          location.href = '#/in'
         })
         .catch(error => console.log('error', error));
     }

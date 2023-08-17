@@ -1,14 +1,11 @@
 import { InAdd } from "./in-add.js";
+import { OutAdd } from "./out-add.js";
 import { InOut } from "./in-out.js";
 import { InOutAdd } from "./in-out-add.js";
 import { InOutReduct } from "./in-out-reduct.js";
 import { InRed } from "./in-red.js";
 import { In } from "./in.js";
-import { Login } from "./login.js";
 import { Main } from "./main.js";
-import { OutAdd } from "./out-add.js";
-import { OutRed } from "./out-red.js";
-import { Out } from "./out.js";
 import { Registration } from "./registration.js";
 
 export class Router {
@@ -67,7 +64,7 @@ export class Router {
         title: 'Вход в аккаунт',
         template: 'templates/login.html',
         load: () => {
-          new Login()
+          new Registration()
         }
       },
       {
@@ -91,7 +88,7 @@ export class Router {
         title: 'Редактирование категории расхода',
         template: 'templates/out-red.html',
         load: () => {
-          new OutRed()
+          new InRed()
         }
       },
       {
@@ -99,7 +96,7 @@ export class Router {
         title: 'Расходы',
         template: 'templates/out.html',
         load: () => {
-          new Out()
+          new In()
         }
       },
       {

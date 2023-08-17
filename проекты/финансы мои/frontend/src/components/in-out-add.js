@@ -78,59 +78,31 @@ export class InOutAdd {
   }
 
   createCategoryList() {
-    const selectElement = document.getElementById("mySelect");
-    if (selectElement.value === "income") {
-      let xAuthToken = localStorage.getItem("accessToken")
-      if (xAuthToken) {
-        let myHeaders = new Headers();
-        myHeaders.append("x-auth-token", xAuthToken);
-        let requestOptions = {
-          method: 'GET',
-          headers: myHeaders,
-          redirect: 'follow'
-        };
+    let value = document.getElementById("mySelect").value;
 
-        fetch("http://localhost:3000/api/categories/income", requestOptions)
-          .then(response => response.json())
+    let xAuthToken = localStorage.getItem("accessToken")
+    if (xAuthToken) {
+      let myHeaders = new Headers();
+      myHeaders.append("x-auth-token", xAuthToken);
+      let requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
 
-          .then(result => {
-            const categoryElement = document.getElementById("category");
-            categoryElement.innerHTML = ''
-            result.forEach(item => {
-              let optionElement = document.createElement("option");
-              optionElement.text = item.title;
-              optionElement.value = item.id;
-              categoryElement.appendChild(optionElement);
-            });
+      fetch("http://localhost:3000/api/categories/" + value, requestOptions)
+        .then(response => response.json())
+
+        .then(result => {
+          const categoryElement = document.getElementById("category");
+          categoryElement.innerHTML = ''
+          result.forEach(item => {
+            let optionElement = document.createElement("option");
+            optionElement.text = item.title;
+            optionElement.value = item.id;
+            categoryElement.appendChild(optionElement);
           });
-      }
-    }
-    else {
-      let xAuthToken = localStorage.getItem("accessToken")
-      if (xAuthToken) {
-        var myHeaders = new Headers();
-        myHeaders.append("x-auth-token", xAuthToken);
-
-        var requestOptions = {
-          method: 'GET',
-          headers: myHeaders,
-          redirect: 'follow'
-        };
-
-        fetch("http://localhost:3000/api/categories/expense", requestOptions)
-          .then(response => response.json())
-          .then(result => {
-            const categoryElement = document.getElementById("category");
-            categoryElement.innerHTML = ''
-            result.forEach(item => {
-              let optionElement = document.createElement("option");
-              optionElement.text = item.title;
-              optionElement.value = item.id;
-              categoryElement.appendChild(optionElement);
-            });
-          });
-      }
-
+        });
     }
   }
 

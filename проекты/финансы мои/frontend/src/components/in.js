@@ -6,10 +6,26 @@ export class In {
     new SidebarMenu()
     this.idOperation = null
     this.titleOperation = null
-    this.filterByCategory = null;
+    this.filterByCategory = null
+    this.param = null
+    this.redirectLink = null
+    this.addLink = null
+    this.checkPage()
     this.showAll()
     this.createCategoryPopup
     this.deleteCategoryIn
+  }
+  checkPage() {
+    if (window.location.hash === '#/in') {
+      this.param = 'income'
+      this.redirectLink = '#/in-red'
+      this.addLink = '#/in-add'
+    }
+    else {
+      this.param = 'expense'
+      this.redirectLink = '#/out-red'
+      this.addLink = '#/out-add'
+    }
   }
   showAll() {
     let xAuthToken = localStorage.getItem("accessToken")
@@ -23,10 +39,10 @@ export class In {
         redirect: 'follow'
       };
 
-      fetch("http://localhost:3000/api/categories/income", requestOptions)
+
+      fetch("http://localhost:3000/api/categories/" + this.param, requestOptions)
         .then(response => response.json())
         .then(result => {
-
           const cards = document.getElementById('cards');
           cards.innerHTML = '';
           result.forEach(element => {
@@ -40,7 +56,7 @@ export class In {
           let cardAdd = document.createElement('div')
           cardAdd.innerHTML = `<div>
           <a
-            href="#/in-add"
+            href=${this.addLink}
             style="text-decoration: none"
             class="card add-card hov"
           >
@@ -48,8 +64,6 @@ export class In {
           </a>
         </div>`
           cards.appendChild(cardAdd)
-
-
           //ищем все кнопки удалить
           const deleteButtons = document.querySelectorAll('.delete');
           // Добавляем обработчик события клика для каждого элемента
@@ -77,7 +91,7 @@ export class In {
               localStorage.setItem(
                 'operationReductInTitle', this.titleOperation
               )
-              location.href = '#/in-red'
+              location.href = this.redirectLink
             });
           });
 
@@ -112,7 +126,7 @@ export class In {
       redirect: 'follow'
     };
 
-    fetch("http://localhost:3000/api/categories/income/" + this.idOperation, requestOptions)
+    fetch(`http://localhost:3000/api/categories/${this.param}/${this.idOperation}`, requestOptions)
       .then(() => {
         this.showAll();
         this.deleteOperationsByCategory();

@@ -29,11 +29,11 @@ export class Main {
       const regex = /^\d{4}-\d{2}-\d{2}$/;
 
       if (!dateFrom || !regex.test(dateFrom)) {
-        alert('введите дату отсчёта в формате YYYY-MM-DD');
+        alert('выберите дату отсчёта');
         return
       }
       else if (!dateTo || !regex.test(dateTo)) {
-        alert('введите дату окночания в формате YYYY-MM-DD');
+        alert('выберите дату окночания');
         return
       }
       else if (dateFrom && dateTo) {

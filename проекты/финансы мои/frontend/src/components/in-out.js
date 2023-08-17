@@ -1,23 +1,27 @@
-import { fullName } from "../services/userName.js";
-import { BalanceMoneyInMenu } from "../services/how-many-money.js";
-import { Accordion } from "../services/accordion.js";
-import { PopupLogout } from "../services/popup-log-out.js";
-import { Refresh } from "../services/refresh.js";
+import { SidebarMenu } from "../services/sidebar-menu.js"
 
 export class InOut {
   constructor() {
     //стандартные элементы страницы
-    new Accordion();
-    new fullName()
-    new BalanceMoneyInMenu()
-    new PopupLogout()
-    new Refresh()
-
+    new SidebarMenu()
     this.idOperation = null
     this.showAllOperations('all')
     this.clickButtons()
   }
 
+  changeTextColorByClass() {
+    let elements = document.getElementsByClassName('he-type');
+
+    for (var i = 0; i < elements.length; i++) {
+      let text = elements[i].innerText;
+
+      if (text === "доход") {
+        elements[i].style.color = "green";
+      } else if (text === "расход") {
+        elements[i].style.color = "red";
+      }
+    }
+  }
   clickButtons() {
     document.getElementById('today').addEventListener('click', () => {
       this.showAllOperations('today')
@@ -140,6 +144,9 @@ export class InOut {
               this.deleteOperation()
             });
           });
+//тут 
+          this.changeTextColorByClass()
+
           const reductButtons = document.querySelectorAll('.redact');
           // Добавляем обработчик события клика для каждого элемента
           reductButtons.forEach(button => {
@@ -170,7 +177,7 @@ export class InOut {
       .then(response => response.json())
       .then(result => {
         document.getElementById("table").innerHTML = '';
-        this.showAllOperations();
+        this.showAllOperations('all');
       })
       .catch(error => console.log('error', error));
   }

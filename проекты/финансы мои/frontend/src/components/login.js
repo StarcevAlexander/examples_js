@@ -1,5 +1,8 @@
 export class Login {
   constructor() {
+    document.getElementById('sidebar').style.display = 'none'
+    document.getElementById('popup').style.display = 'none'
+
     const inputEmail = document.getElementById('email');
     const inputPassword = document.getElementById('password');
     const submitButton = document.getElementById('submitButton');

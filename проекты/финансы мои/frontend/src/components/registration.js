@@ -1,6 +1,9 @@
 export class Registration {
 
   constructor() {
+    document.getElementById('sidebar').style.display = 'none'
+    document.getElementById('popup').style.display = 'none'
+
     // Получаем ссылки на элементы input и button
     const inputName = document.getElementById('name');
     const inputEmail = document.getElementById('email');

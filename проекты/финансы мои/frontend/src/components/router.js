@@ -118,6 +118,13 @@ export class Router {
       window.location.href = '#/';
       return
     }
+
+    if (window.location.href === '#/login' || window.location.href === '#/registration') {
+      document.getElementById('sidebar').style.display = 'none';
+    } else {
+      document.getElementById('sidebar').style.display = 'flex';
+    }
+
     document.getElementById('content').innerHTML = await fetch(newRoute.template).then(response => response.text());
     document.getElementById('title').innerText = newRoute.title;
     newRoute.load();

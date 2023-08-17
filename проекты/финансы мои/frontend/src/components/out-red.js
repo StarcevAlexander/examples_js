@@ -1,17 +1,8 @@
-import { fullName } from "../services/userName.js";
-import { BalanceMoneyInMenu } from "../services/how-many-money.js";
-import { Accordion } from "../services/accordion.js";
-import { PopupLogout } from "../services/popup-log-out.js";
-import { Refresh } from "../services/refresh.js";
+import { SidebarMenu } from "../services/sidebar-menu.js";
 
 export class OutRed {
   constructor() {
-    //стандартные элементы страницы
-    new Accordion();
-    new fullName()
-    new BalanceMoneyInMenu()
-    new PopupLogout()
-    new Refresh()
+    new SidebarMenu()
     this.start()
     this.redactCategoryOut()
   }

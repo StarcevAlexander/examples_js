@@ -1,21 +1,13 @@
-import { fullName } from "../services/userName.js";
-import { BalanceMoneyInMenu } from "../services/how-many-money.js";
-import { Accordion } from "../services/accordion.js";
-import { PopupLogout } from "../services/popup-log-out.js";
-import { Refresh } from "../services/refresh.js";
+import { SidebarMenu } from "../services/sidebar-menu.js";
+
 
 export class InOutAdd {
   constructor() {
+    new SidebarMenu()
     //стандартные элементы страницы
-    new Accordion();
-    new fullName()
-    new BalanceMoneyInMenu()
-    new PopupLogout()
     this.createCategoryList()
     this.restartCreateCategoryList()
     this.addCategoryPopup()
-    //  this.addCategory
-    new Refresh()
   }
 
 

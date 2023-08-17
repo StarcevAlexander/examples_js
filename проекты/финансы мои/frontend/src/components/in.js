@@ -1,30 +1,23 @@
-import { fullName } from "../services/userName.js";
-import { BalanceMoneyInMenu } from "../services/how-many-money.js";
-import { Accordion } from "../services/accordion.js";
-import { PopupLogout } from "../services/popup-log-out.js";
-import { Refresh } from "../services/refresh.js";
+import { SidebarMenu } from "../services/sidebar-menu.js"
 
 export class In {
   constructor() {
     //стандартные элементы страницы
-    new Accordion();
-    new fullName()
-    new BalanceMoneyInMenu()
-    new PopupLogout()
-    new Refresh()
+    new SidebarMenu()
     this.idOperation = null
     this.titleOperation = null
     this.filterByCategory = null;
     this.showAll()
+    this.createCategoryPopup
+    this.deleteCategoryIn
   }
   showAll() {
     let xAuthToken = localStorage.getItem("accessToken")
-    console.log(xAuthToken);
     if (xAuthToken) {
-      var myHeaders = new Headers();
+      let myHeaders = new Headers();
       myHeaders.append("x-auth-token", xAuthToken);
 
-      var requestOptions = {
+      let requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
@@ -35,7 +28,7 @@ export class In {
         .then(result => {
 
           const cards = document.getElementById('cards');
-
+          cards.innerHTML = '';
           result.forEach(element => {
             const card = document.createElement('div');
             cards.appendChild(card);
@@ -55,6 +48,8 @@ export class In {
           </a>
         </div>`
           cards.appendChild(cardAdd)
+
+
           //ищем все кнопки удалить
           const deleteButtons = document.querySelectorAll('.delete');
           // Добавляем обработчик события клика для каждого элемента
@@ -63,9 +58,11 @@ export class In {
               // Выводим значение и тип id родителя
               this.idOperation = button.parentNode.id;
               this.titleOperation = button.parentNode.title;
-              this.deleteCategoryIn()
+              this.createCategoryPopup()
             });
           });
+
+
           //ищем все кнопки редактировать
           const putButtons = document.querySelectorAll('.redact');
           // Добавляем обработчик события клика для каждого элемента
@@ -83,22 +80,32 @@ export class In {
               location.href = '#/in-red'
             });
           });
+
         }
         )
         .catch(error => console.log('error', error));
     }
   }
 
+  createCategoryPopup() {
+    const popup = document.getElementById('popup-category')
+    popup.style.display = 'flex';
+
+    document.getElementById('delete-category').addEventListener('click', () => {
+      popup.style.display = 'none'
+      document.getElementById('cards').innerHTML = '';
+      this.deleteCategoryIn()
+    });
+    document.getElementById('dont-delete-category').addEventListener('click', () => popup.style.display = 'none');
+  }
 
   deleteCategoryIn() {
-
-    console.log(this.titleOperation);
     let xAuthToken = localStorage.getItem("accessToken")
-    var myHeaders = new Headers();
+    let myHeaders = new Headers();
     myHeaders.append("x-auth-token", xAuthToken);
-    var raw = "";
+    let raw = "";
 
-    var requestOptions = {
+    let requestOptions = {
       method: 'DELETE',
       headers: myHeaders,
       body: raw,
@@ -106,14 +113,11 @@ export class In {
     };
 
     fetch("http://localhost:3000/api/categories/income/" + this.idOperation, requestOptions)
-      .then(alert(
-        'категория удалена'),
-        document.getElementById('cards').innerHTML = '',
-        this.showAll()
-      )
+      .then(() => {
+        this.showAll();
+        this.deleteOperationsByCategory();
+      })
       .catch(error => console.log('error', error));
-    this.deleteOperationsByCategory()
-
   }
 
   deleteOperationsByCategory() {
@@ -131,13 +135,9 @@ export class In {
     fetch("http://localhost:3000/api/operations?period=all", requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log(result)
         this.filteredArray = result.filter(item => item.category == undefined)
         let ids = this.filteredArray.map(obj => obj.id);
-        console.log(ids);
-
         ids.forEach(element => {
-          console.log(typeof element)
           let xAuthToken = localStorage.getItem("accessToken")
           let myHeaders = new Headers();
           myHeaders.append("x-auth-token", xAuthToken);
@@ -149,14 +149,9 @@ export class In {
           };
 
           fetch("http://localhost:3000/api/operations/" + element, requestOptions)
-            .then(result =>
-              console.log(result),
-              document.getElementById('cards').innerHTML = '',
-            )
             .catch(error => console.log('error', error));
         }
         )
-        this.showAll()
       }
       );
 

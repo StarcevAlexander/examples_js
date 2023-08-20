@@ -1,5 +1,5 @@
 import { SidebarMenu } from "../services/sidebar-menu.js";
-
+//тут отрисовывается главаная страница с кругом
 export class Main {
   constructor() {
     //стандартные элементы страницы

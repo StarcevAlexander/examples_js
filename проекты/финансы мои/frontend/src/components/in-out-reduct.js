@@ -1,9 +1,8 @@
 import { SidebarMenu } from "../services/sidebar-menu.js"
-
+//тут редактирование всех операций
 export class InOutReduct {
   constructor() {
     //стандартные элементы страницы
-
     new SidebarMenu()
     this.select = null
     this.category = null
@@ -18,7 +17,6 @@ export class InOutReduct {
   showOperation() {
     let xAuthToken = localStorage.getItem("accessToken")
     let operationNum = localStorage.getItem("operation-num")
-    console.log(xAuthToken);
 
     if (xAuthToken) {
       let myHeaders = new Headers();
@@ -39,7 +37,6 @@ export class InOutReduct {
           this.summ = document.getElementById('summ').value = this.object.amount;
           this.date = document.getElementById('date').value = this.object.date;
           this.comment = document.getElementById('comment').value = this.object.comment;
-          this.refreshOperation()
         }
         );
     }
@@ -53,11 +50,11 @@ export class InOutReduct {
       myHeaders.append("x-auth-token", xAuthToken);
       myHeaders.append("Content-Type", "application/json");
       let raw = JSON.stringify({
-        "type": 'income' ? 'Доход' : 'Расход',
+        "type": document.getElementById('select').value === 'Доход' ? 'income' : 'expense',
         "amount": +document.getElementById('summ').value,
         "date": document.getElementById('date').value,
         "comment": document.getElementById('comment').value,
-        "category_id": operationNum
+        "category_id": +operationNum
       });
 
       let requestOptions = {

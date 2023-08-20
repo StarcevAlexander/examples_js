@@ -222,9 +222,9 @@ input:focus {
 
 .add-card a:hover {
   color: #0d6efd;
-  font-size: 150%;
+    font-size: 150%;
 }
 
-/* .menu-link {
-  text-decoration: none;
-} */
+.create-category #date {
+  padding: 0 4px 0 10px;
+}

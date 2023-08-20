@@ -1,9 +1,7 @@
-import { InAdd } from "./in-add.js";
-import { OutAdd } from "./out-add.js";
+import { Add } from "./add.js";
 import { InOut } from "./in-out.js";
 import { InOutAdd } from "./in-out-add.js";
 import { InOutReduct } from "./in-out-reduct.js";
-import { InRed } from "./in-red.js";
 import { In } from "./in.js";
 import { Main } from "./main.js";
 import { Registration } from "./registration.js";
@@ -14,9 +12,9 @@ export class Router {
       {
         route: '#/in-add',
         title: 'Создание категории доходов',
-        template: 'templates/in-add.html',
+        template: 'templates/add.html',
         load: () => {
-          new InAdd()
+          new Add('income')
         }
       },
       {
@@ -46,9 +44,9 @@ export class Router {
       {
         route: '#/in-red',
         title: 'Редактирование категории дохода',
-        template: 'templates/in-red.html',
+        template: 'templates/redact-category.html',
         load: () => {
-          new InRed()
+          new Add('redact-in')
         }
       },
       {
@@ -56,7 +54,7 @@ export class Router {
         title: 'Доходы',
         template: 'templates/in.html',
         load: () => {
-          new In()
+          new In('in')
         }
       },
       {
@@ -78,25 +76,25 @@ export class Router {
       {
         route: '#/out-add',
         title: 'Добавление категории расходов',
-        template: 'templates/out-add.html',
+        template: 'templates/add.html',
         load: () => {
-          new OutAdd()
+          new Add('expense')
         }
       },
       {
         route: '#/out-red',
         title: 'Редактирование категории расхода',
-        template: 'templates/out-red.html',
+        template: 'templates/redact-category.html',
         load: () => {
-          new InRed()
+          new Add('redact-out')
         }
       },
       {
         route: '#/out',
         title: 'Расходы',
-        template: 'templates/out.html',
+        template: 'templates/in.html',
         load: () => {
-          new In()
+          new In('out')
         }
       },
       {

@@ -10,15 +10,13 @@ export class BalanceMoneyInMenu {
         redirect: 'follow'
       };
 
-      setInterval(() => {
-        fetch("http://localhost:3000/api/balance", requestOptions)
-          .then(response => response.json())
-          .then(result => {
-            let balance = result.balance
-            document.getElementById('balance').innerText = balance + '₽'
-          })
-          .catch(error => console.log('error', error))
-      }, 2000);
+      fetch("http://localhost:3000/api/balance", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          let balance = result.balance
+          document.getElementById('balance').innerText = balance + '₽'
+        })
+        .catch(error => console.log('error', error))
     }
   }
 }

@@ -1,5 +1,5 @@
 export class Registration {
-
+//для регистрации и авторизации пользователя
   constructor() {
     document.getElementById('sidebar').style.display = 'none'
     document.getElementById('popup').style.display = 'none'
@@ -63,7 +63,7 @@ export class Registration {
       let raw = JSON.stringify({
         "email": this.valueEmail,
         "password": this.valuePassword,
-        "rememberMe": !this.agreeCheck ? true : this.agreeCheck.checked ? true : false,
+        "rememberMe": !this.agreeCheck ? true : this.agreeCheck.checked,
       });
 
       const requestOptions = {

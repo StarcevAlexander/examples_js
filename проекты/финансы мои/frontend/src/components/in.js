@@ -1,31 +1,32 @@
 import { SidebarMenu } from "../services/sidebar-menu.js"
-
+//тут отрисовываются категории доходов и расходов
 export class In {
-  constructor() {
+  constructor(param) {
     //стандартные элементы страницы
     new SidebarMenu()
+    this.title = document.getElementById('page-title')
     this.idOperation = null
     this.titleOperation = null
     this.filterByCategory = null
     this.param = null
     this.redirectLink = null
     this.addLink = null
-    this.checkPage()
-    this.showAll()
     this.createCategoryPopup
     this.deleteCategoryIn
-  }
-  checkPage() {
-    if (window.location.hash === '#/in') {
+    
+    if (param === 'in') {
       this.param = 'income'
       this.redirectLink = '#/in-red'
       this.addLink = '#/in-add'
+      this.title.innerText = 'Доходы'
     }
     else {
       this.param = 'expense'
       this.redirectLink = '#/out-red'
       this.addLink = '#/out-add'
+      this.title.innerText = 'Расходы'
     }
+    this.showAll()
   }
   showAll() {
     let xAuthToken = localStorage.getItem("accessToken")
@@ -38,8 +39,6 @@ export class In {
         headers: myHeaders,
         redirect: 'follow'
       };
-
-
       fetch("http://localhost:3000/api/categories/" + this.param, requestOptions)
         .then(response => response.json())
         .then(result => {

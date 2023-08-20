@@ -1,5 +1,6 @@
 import { SidebarMenu } from "../services/sidebar-menu.js";
 
+//тут добаваление всех операций
 
 export class InOutAdd {
   constructor() {

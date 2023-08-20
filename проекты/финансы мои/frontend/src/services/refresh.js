@@ -1,9 +1,6 @@
 export class Refresh {
   constructor() {
-    this.refreshTokens();
-    setInterval(() => {
-      this.refreshTokens();
-    }, 600000);
+    this.refreshTokens();   
   }
 
   refreshTokens() {
